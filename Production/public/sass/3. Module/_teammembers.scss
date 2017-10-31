@@ -1,0 +1,43 @@
+.wie {
+  position: relative;
+}
+
+.text-vertical {
+  font-size: 2rem;
+  color: $color__text-main;
+  font-family: akzidenz-grotesk_nextlight, sans-serif;
+  padding-bottom: 2rem;
+
+  @include tablet {
+    position: absolute;
+    padding-bottom: 0;
+    transform: rotate(-90deg) translateX(-130%) translateY(-200%);
+  }
+}
+
+.membersrow {
+  justify-content: space-around;
+}
+
+.team-member {
+  display: inline-block;
+  padding: 1rem 1rem 2rem 1rem;
+
+  .photo {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    background-color: grey;
+  }
+  .info {
+    text-align: center;
+    padding-top: 1rem;
+    p {
+      margin-bottom: 0rem;
+      color: $color-broken-white;
+    }
+  }
+}

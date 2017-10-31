@@ -1,0 +1,219 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background 1s;
+  background: rgba(20,64,62,0.8);
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__site-branding {
+  display: inline-block;
+}
+
+.header__logo {
+  background-image: url('img/logo.png');
+  height: 6.4rem;
+  width: 19.2rem;
+  margin: 1rem;
+}
+
+.header__logo-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.header__mainnav {
+  height: 0;
+  transition: all 0.2s;
+
+  .toggled & {
+    height: 100vh;
+  }
+
+  @include tablet {
+    display: inline-block;
+    height: auto;
+    position: absolute;
+    right: 10rem;
+  }
+}
+
+.header__mainnav-list {
+    display: block;
+    margin: 0;
+    list-style: none;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+
+    .toggled & {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @include tablet {
+      margin-right: 2rem;
+      visibility: visible;
+      opacity: 1;
+    }
+}
+
+.header__mainnav-listitem {
+
+  @include tablet {
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+.header__mainnav-listitem + .header__mainnav-listitem .header__mainnav-link {
+  border-top: 1px solid white;
+  @include tablet {
+    border-top: initial;
+  }
+}
+
+.header__mainnav-link {
+  font-size: 2rem;
+  color: white;
+  padding: 1rem 0;
+  margin: 0 2rem;
+  text-transform: uppercase;
+  display: block;
+
+  &.active {
+    color: $color-green;
+  }
+}
+
+
+
+.header__menu-toggle {
+  @include tablet {display: none}
+  display: block;
+  width: 3.5rem;
+  height: 3rem;
+
+  position: absolute;
+  right: 2rem;
+  top: 3rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  span, span::before, span::after {
+    width: 100%;
+    height: 0.4rem;
+    background-color: white;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+  }
+
+  span {
+    user-select: none;
+    position: relative;
+    display: block;
+    color: transparent;
+
+    &::before, &::after {
+      content:'';
+      position: absolute;
+      left: 0;
+      top: 1rem;
+    }
+
+    &::after {
+      top: 2rem;
+    }
+  }
+
+  .toggled & {
+    span {
+      background-color: transparent;
+
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: translate(0,-1rem) rotate(-45deg);
+      }
+
+    }
+  }
+
+}
+
+.header__languages {
+  display: none;
+  position: absolute;
+  bottom: 10rem;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s;
+
+  .toggled & {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    width: 100%;
+  }
+
+  @include tablet {
+    display: inline-block;
+    bottom: 0;
+    right: 1rem;
+
+    visibility: visible;
+    opacity: 1;
+  }
+
+}
+
+.header__languages-list {
+  display: block;
+  list-style: none;
+}
+
+.header__languages-listitem {
+
+}
+
+.header__languages-link {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: white;
+  padding: 1rem 0;
+  margin: 0 2rem;
+  display: block;
+  text-align: right;
+
+  &.active {
+    color: $color-green;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include tablet {
+    padding: 0;
+  }
+}
+
+
+
+
+
+

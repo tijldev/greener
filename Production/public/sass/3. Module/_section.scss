@@ -1,0 +1,29 @@
+.padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+
+.section-title {
+  margin-bottom: 6rem;
+  font-size: 5.4rem;
+  line-height: 6rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: $color-green;
+  font-family: sifonnbasic, sans-serif;
+  word-wrap: break-word;
+}
+
+.section-title::after {
+  content: '';
+  margin-top: 1rem;
+  display: block;
+  width: 6rem;
+  height: 0.6rem;
+  background-color: $color__text-main;
+}
+
+
+
+
